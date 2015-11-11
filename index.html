@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+	<title>Tic-Tac-Toe</title>
+
+	<!-- Bootstrap -->
+	<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+	<link href="style.css" rel="stylesheet">
+	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	<!--[if lt IE 9]>
+	  <script src="//oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+	  <script src="//oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+	<![endif]-->
+  </head>
+  <body>
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<!-- Include all compiled plugins (below), or include individual files as needed -->
+	<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="script.js" language="javascript"></script>
+	
+	<div class="container">
+		<div class="menu">
+			<nav class="navbar navbar-default">
+				<div class="menu">
+				  <ul class="nav navbar-nav">
+					<li><a id="nav_newgame" href="#">NEW GAME</a></li>
+					<li><a id="nav_mode" href="#">MODE</a></li>
+				  </ul>
+				</div>
+			</nav>
+		</div>
+		
+		<div class="game row">
+			<div class="col-xs-9 col-md-6 center-block" style="float: none;">		
+				<div class="row">
+					<div class="col-xs-4 col-md-4 padding">
+						<div class="cell" id="cell0">
+							<div class="cross"></div>
+							<div class="circle"></div>
+						</div>
+					</div>
+					<div class="col-xs-4 col-md-4 padding">
+						<div class="cell" id="cell1">
+							<div class="cross"></div>
+							<div class="circle"></div>
+						</div>
+					</div>
+					<div class="col-xs-4 col-md-4 padding">
+						<div class="cell" id="cell2">
+							<div class="cross"></div>
+							<div class="circle"></div>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-xs-4 col-md-4 padding">
+						<div class="cell" id="cell3">
+							<div class="cross"></div>
+							<div class="circle"></div>
+						</div>
+					</div>
+					<div class="col-xs-4 col-md-4 padding">
+						<div class="cell" id="cell4">
+							<div class="cross"></div>
+							<div class="circle"></div>
+						</div>
+					</div>
+					<div class="col-xs-4 col-md-4 padding">
+						<div class="cell" id="cell5">
+							<div class="cross"></div>
+							<div class="circle"></div>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-xs-4 col-md-4 padding">
+						<div class="cell" id="cell6">
+							<div class="cross"></div>
+							<div class="circle"></div>
+						</div>
+					</div>
+					<div class="col-xs-4 col-md-4 padding">
+						<div class="cell" id="cell7">
+							<div class="cross"></div>
+							<div class="circle"></div>
+						</div>
+					</div>
+					<div class="col-xs-4 col-md-4 padding">
+						<div class="cell" id="cell8">
+							<div class="cross"></div>
+							<div class="circle"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="score">
+			<label id="P1" class="player">YOU</label> <label id="score_label">0:0</label> <label id="P2">CPU</label>
+		</div>
+		
+		<div id="myModal" class="modal fade" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h4 class="modal-title"></h4>
+					</div>
+					<div class="modal-body">
+						<p>Start new game or continue?</p>
+					</div>
+					<div class="modal-footer">
+						<button type="button" id="modal_new" class="btn btn-default" data-dismiss="modal">New game</button>
+						<button type="button" id="modal_continue" class="btn btn-default" data-dismiss="modal">Continue</button>
+					</div>
+    			</div>
+  			</div>
+		</div>
+	</div>
+  </body>
+</html>
