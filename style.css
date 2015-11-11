@@ -1,0 +1,84 @@
+.cell{
+    border: 			solid 1px #777;
+    background-size:		cover;
+    background-color: 		#eee;
+    width: 			100%;
+    padding-bottom : 		100%;
+}
+
+.cell:hover
+{
+	background-color: 	#ddd;
+	cursor: 		pointer;
+}
+
+.selected:hover
+{
+	background-color: 	#eee;
+	cursor: 		default;
+}
+
+.player
+{
+	color: 		#66CC00;
+}
+
+.cross {
+	display:		none;
+}
+
+.cross:before {
+	content:		'';
+	width: 			100%;
+	border-bottom: 		3px solid #777;
+	-webkit-transform: 	rotate(-45deg);
+	transform: 		rotate(-45deg);
+	z-index:		99;
+	position:		absolute;
+	top: 			50%;
+	left: 			0;
+}
+
+.cross:after{
+	content:		'';
+	width: 			100%;
+	border-bottom: 		3px solid #777;
+	-webkit-transform: 	rotate(45deg);
+	transform: 		rotate(45deg);
+	z-index:		99;
+	position:		absolute;
+	top: 			50%;
+	left: 			0;
+}
+
+.circle {
+	border: 		solid 3px #777;
+	border-radius: 		100%;
+	width: 			76%;
+	height: 		76%; 
+	position:		absolute;
+	top: 			12%;
+	left: 			12%;
+	display:		none;
+}
+
+.padding {
+	padding: 		5px;
+}
+
+.score {
+	text-align:		center;
+	font-size:		xx-large;
+	margin-top:		2em;
+}
+
+.message {
+	position:		absolute;
+	top:		50%;
+	left: 		50%;
+	margin-top: 		-150px;
+	margin-left: 		-50px;
+	width: 		100px;
+	height: 		100px;
+	z-index: 		100;
+}
