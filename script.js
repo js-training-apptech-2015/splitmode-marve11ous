@@ -1,7 +1,5 @@
 $(document).ready(function(){
-	var player = true;
-	var s_cross = '.cross';
-	var s_circle = '.circle';
+	var selector = ['.cross', '.circle'];
 	var field = [[],[],[]];
 	var players = ['PLAYER1', 'PLAYER2'];
 	var score = [0,0];
@@ -13,9 +11,8 @@ $(document).ready(function(){
 	$('.cell').click(function(){
 		if ($(this).attr('class').indexOf('selected')<0)
 		{
-			moveCnt++;
 			$(this).addClass('selected');
-			$(this).find(player?s_cross:s_circle).show();
+			$(this).find(selector[moveCnt%2]).show();
 			var x = parseInt($(this).attr('id').replace('cell',''));
 			var y = 0;
 			while (x>2)
@@ -23,17 +20,17 @@ $(document).ready(function(){
 				y++;
 				x-=3;
 			}
-			field[x][y] = player;
+			field[x][y] = moveCnt%2;
 			if (checkGameStatus(x,y))
 			{
 				$('.cell').addClass('selected');
-				score[player?0:1]+=2;
+				score[moveCnt%2]+=2;
 				setScore();
-				$('.modal-title').text(players[player?0:1]+' WIN');
+				$('.modal-title').text(players[moveCnt%2]+' WIN');
 				$('#myModal').modal('show');
 				return;
 			}
-			else if(moveCnt===9)
+			else if(moveCnt===8)
 			{
 				score[0]++;
 				score[1]++;
@@ -42,7 +39,7 @@ $(document).ready(function(){
 				$('#myModal').modal('show');
 				return;
 			}
-			player = !player;
+			moveCnt++;
 			$('#P1').toggleClass("player");
 			$('#P2').toggleClass("player");
 		}
@@ -62,18 +59,16 @@ $(document).ready(function(){
 	
 	function newGame(clearScore)
 	{
-		$('.game').find(s_cross).hide();
-		$('.game').find(s_circle).hide();
+		$('.game').find(selector[0]).hide();
+		$('.game').find(selector[1]).hide();
 		$('.cell').removeClass('selected');
-		player = true;
 		$('#P1').addClass("player");
 		$('#P2').removeClass("player");
 		field = [[],[],[]];
 		moveCnt = 0;
 		if (clearScore)
 		{
-			score[0] = 0;
-			score[1] = 0;
+			score = [0,0];
 			setScore();
 		}
 	}
