@@ -29,8 +29,20 @@
 			<nav class="navbar navbar-default">
 				<div class="menu">
 				  <ul class="nav navbar-nav">
-					<li><a id="nav_newgame" href="#">NEW GAME</a></li>
-					<li><a id="nav_mode" href="#">MODE</a></li>
+					<li class="dropdown">
+    					<a href="#" class="dropdown-toggle" data-toggle="dropdown">GAME <b class="caret"></b></a>
+    					<ul class="dropdown-menu">
+    						<li><a id="nav_newgame" href="#">Start new game</a></li>
+    						<li><a id="nav_connect" href="#">Connect to game</a></li>
+    					</ul>
+  					</li>
+					<li class="dropdown">
+    					<a href="#" class="dropdown-toggle" data-toggle="dropdown">MODE: <label id="nav_mode">Split</label> <b class="caret"></b></a>
+    					<ul class="dropdown-menu">
+    						<li><a id="nav_split" href="#">Split</a></li>
+    						<li><a id="nav_network" href="#">Network</a></li>
+    					</ul>
+  					</li>
 				  </ul>
 				</div>
 			</nav>
@@ -105,18 +117,42 @@
 			<label id="P1" class="player">YOU</label> <label id="score_label">0:0</label> <label id="P2">CPU</label>
 		</div>
 		
-		<div id="myModal" class="modal fade" role="dialog">
+		<div class="game_state">
+			<label id="state"></label>
+		</div>
+		
+		<div id="finishModal" class="modal fade" role="dialog">
 			<div class="modal-dialog">
 				<div class="modal-content">
 					<div class="modal-header">
 						<h4 class="modal-title"></h4>
 					</div>
 					<div class="modal-body">
-						<p>Start new game or continue?</p>
+						<p id="finishMsg"></p>
 					</div>
 					<div class="modal-footer">
 						<button type="button" id="modal_new" class="btn btn-default" data-dismiss="modal">New game</button>
 						<button type="button" id="modal_continue" class="btn btn-default" data-dismiss="modal">Continue</button>
+						<button type="button" id="modal_ok" class="btn btn-default" data-dismiss="modal" style="display:none;">OK</button>
+					</div>
+    			</div>
+  			</div>
+		</div>
+		
+		<div id="connectModal" class="modal fade" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h4 class="modal-title">Connect</h4>
+					</div>
+					<div class="modal-body">
+						<p>Insert game token to connect:
+						<input type="text" id="game_token" size="40" value="">
+						</p>
+					</div>
+					<div class="modal-footer">
+						<button type="button" id="modal_connect" class="btn btn-default" data-dismiss="modal">Connect</button>
+						<button type="button" id="modal_cancel" class="btn btn-default" data-dismiss="modal">Cancel</button>
 					</div>
     			</div>
   			</div>
