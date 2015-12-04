@@ -72,6 +72,12 @@
 	margin-top:		2em;
 }
 
+.game_state {
+	text-align:		center;
+	font-size:		x-large;
+	margin-top:		2em;
+}
+
 .message {
 	position:		absolute;
 	top:		50%;
